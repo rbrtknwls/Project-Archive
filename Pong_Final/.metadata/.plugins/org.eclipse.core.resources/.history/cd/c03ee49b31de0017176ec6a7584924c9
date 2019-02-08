@@ -1,0 +1,40 @@
+package pong;
+
+import static org.lwjgl.glfw.GLFW.*;
+
+public class paddle{
+	
+	private float[] dem = {0.02f, 0.2f};
+    private double[] coords = {-1f + dem[0], 0.0f};
+    
+
+    public void key_press (int key){
+        if (key == GLFW_KEY_UP){
+        		this.velX(main.max_vol);
+        }
+        else if (key == GLFW_KEY_DOWN){
+        		this.velX(-main.max_vol);
+        }
+    }
+
+
+    public double[] getCoords(){
+        return coords;
+    }
+    
+    public float[] getDem() {
+    		return dem;
+    }
+
+
+    public void setCoords(double[] newValues){
+        coords = newValues;
+    }
+
+    public void velY(double newValue){
+        coords[1] = coords[1] + newValue;
+    }
+    public void velX(double newValue){
+        coords[0] = coords[0] + newValue;
+    }
+}

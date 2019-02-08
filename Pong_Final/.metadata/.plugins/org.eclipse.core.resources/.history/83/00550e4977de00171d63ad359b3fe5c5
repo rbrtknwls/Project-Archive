@@ -1,0 +1,114 @@
+package pong;
+
+import static org.lwjgl.glfw.GLFW.*;
+import static org.lwjgl.opengl.GL11.*;
+
+import java.util.Scanner;
+
+import org.lwjgl.glfw.GLFWVidMode;
+import org.lwjgl.opengl.GL;
+
+/*
+ * Author: Robbie Knowles
+ * Goal: To create pong
+ */
+
+
+
+public class main {
+	//--------Global varibales--------
+	
+	//Max Velocity of each object, placeholder for acceleration
+    public static float max_vol = 0.01f;
+    //Score of the person
+    public static float score = 0;
+    
+    //--------------------------------
+
+	public static void main(){
+        //INIT GLFW
+		//Starts the Graphics library we are using
+        if (!glfwInit()){
+            throw new IllegalStateException("Failed to initialize GLFW!");
+        }
+        glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
+        GLFWVidMode videoMode = glfwGetVideoMode(glfwGetPrimaryMonitor());
+        //Instancastes the window object
+        long window = glfwCreateWindow(videoMode.width(), videoMode.height(), "RuR", glfwGetPrimaryMonitor(), 0);
+        glfwShowWindow(window);
+        glfwMakeContextCurrent(window);
+        GL.createCapabilities();
+        glClearColor(0, 0, 0, 0);
+        
+        //Init Player
+        //Creates a paddle
+        paddle p1 = new paddle();
+        //Creates an ai
+        ai en = new ai();
+        //Creates the ball
+        ball ball = new ball();
+        //Game loop
+        while (!glfwWindowShouldClose(window)){
+            //Processes events
+            glfwPollEvents();
+            //Clears the screen (context)
+            glClear(GL_COLOR_BUFFER_BIT);
+            
+            //Check to see for User input
+            	if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_TRUE && p1.getCoords()[1] + p1.getDem()[1] <= 1) p1.velY(max_vol);
+            	if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_TRUE && p1.getCoords()[1] - p1.getDem()[1] >= -1) p1.velY(-max_vol);
+            	
+            	//Updates the ball based on the player and enemy
+            	ball.updateBall(p1, en);
+            	// Updates the enemy based off the ball
+            	en.path(ball);
+            	
+            	//Draws each objects
+            	draw_rect(ball);
+            draw_rect(p1);
+            draw_rect(en);
+            //Swaps buffers (display and draw)
+            glfwSwapBuffers(window);
+        }
+        //Prints out the score at the end
+        System.out.println("You had a final score of " + score);
+        glfwTerminate();
+        //Closes app and cleans memory
+        
+    }
+    
+	//Repeated for each class, as I was to lazy to do some class inheritence stuff
+    public static void draw_rect(paddle p){
+    		//GL uses points to draw shapes, hence the uses of the variables
+        glBegin(GL_QUADS);
+        glColor4f(0, 255, 128, 0);
+        glVertex2f(-p.getDem()[0]+(float)p.getCoords()[0], p.getDem()[1]+(float)p.getCoords()[1]);
+        glVertex2f(p.getDem()[0]+(float)p.getCoords()[0], p.getDem()[1]+(float)p.getCoords()[1]);
+        glVertex2f(p.getDem()[0]+(float)p.getCoords()[0], -p.getDem()[1]+(float)p.getCoords()[1]);
+        glVertex2f(-p.getDem()[0]+(float)p.getCoords()[0], -p.getDem()[1]+(float)p.getCoords()[1]);
+        glEnd();
+    }
+    
+    public static void draw_rect(ball p){
+        glBegin(GL_QUADS);
+        glColor4f(0, 255, 128, 0);
+        glVertex2f(-p.getDem()[0]+(float)p.getCoords()[0], p.getDem()[1]+(float)p.getCoords()[1]);
+        glVertex2f(p.getDem()[0]+(float)p.getCoords()[0], p.getDem()[1]+(float)p.getCoords()[1]);
+        glVertex2f(p.getDem()[0]+(float)p.getCoords()[0], -p.getDem()[1]+(float)p.getCoords()[1]);
+        glVertex2f(-p.getDem()[0]+(float)p.getCoords()[0], -p.getDem()[1]+(float)p.getCoords()[1]);
+        glEnd();
+    }
+    
+    public static void draw_rect(ai p){
+        glBegin(GL_QUADS);
+        glColor4f(0, 255, 128, 0);
+        glVertex2f(-p.getDem()[0]+(float)p.getCoords()[0], p.getDem()[1]+(float)p.getCoords()[1]);
+        glVertex2f(p.getDem()[0]+(float)p.getCoords()[0], p.getDem()[1]+(float)p.getCoords()[1]);
+        glVertex2f(p.getDem()[0]+(float)p.getCoords()[0], -p.getDem()[1]+(float)p.getCoords()[1]);
+        glVertex2f(-p.getDem()[0]+(float)p.getCoords()[0], -p.getDem()[1]+(float)p.getCoords()[1]);
+        glEnd();
+    }
+
+  
+
+}

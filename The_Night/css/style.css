@@ -1,0 +1,18 @@
+button {
+    background-color: #b3d7ff;
+    color: white;
+    border: gainsboro;
+    bottom: 20px;
+    height: 40px;
+    font-size: 12pt;
+    float: left;
+    width: 90px;
+    margin: 10px 0 25px 50px;
+}
+button:hover {
+    background-color: #a1c1e5;
+}
+
+button:disabled {
+    background-color: grey;
+}

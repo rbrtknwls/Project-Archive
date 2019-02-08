@@ -1,0 +1,37 @@
+package pong;
+
+
+public class ai{
+	
+	private float[] dem = {0.02f, 0.2f};
+    private double[] coords = {1f - dem[0], 0.0f};
+    
+
+
+
+    public void path (ball ball) {
+    		if (ball.getCoords()[1] > this.getCoords()[1]) this.velY(main.max_vol);
+    		else this.velY(-main.max_vol);
+    }
+
+
+    public double[] getCoords(){
+        return coords;
+    }
+    
+    public float[] getDem() {
+    		return dem;
+    }
+
+
+    public void setCoords(double[] newValues){
+        coords = newValues;
+    }
+
+    public void velY(double newValue){
+        coords[1] = coords[1] + newValue;
+    }
+    public void velX(double newValue){
+        coords[0] = coords[0] + newValue;
+    }
+}

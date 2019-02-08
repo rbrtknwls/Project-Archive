@@ -1,0 +1,46 @@
+package pong;
+
+import static org.lwjgl.glfw.GLFW.*;
+import static org.lwjgl.opengl.GL11.*;
+
+import org.lwjgl.glfw.GLFWVidMode;
+import org.lwjgl.opengl.GL;
+public class player {
+	
+	private float[] dem = {0.02f, 0.2f};
+    private double[] coords = {-1f + dem[0], 0.0f};
+    
+
+
+
+
+    public void key_press (int key){
+        if (key == GLFW_KEY_UP && coords[1] + dem[1]){
+        		this.velX(main.max_vol);
+        }
+        else if (key == GLFW_KEY_DOWN){
+        		this.velX(-0.005);
+        }
+    }
+
+
+    public double[] getCoords(){
+        return coords;
+    }
+    
+    public float[] getDem() {
+    		return dem;
+    }
+
+
+    public void setCoords(double[] newValues){
+        coords = newValues;
+    }
+
+    public void velY(double newValue){
+        coords[1] = coords[1] + newValue;
+    }
+    public void velX(double newValue){
+        coords[0] = coords[0] + newValue;
+    }
+}

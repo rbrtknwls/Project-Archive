@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;pong.player&apos; to &apos;paddle&apos;&#x0A;- Original project: &apos;pong&apos;&#x0A;- Original element: &apos;pong.player&apos;&#x0A;- Renamed element: &apos;pong.paddle&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;player&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;pong{player.java[player" matchStrategy="1" name="paddle" qualified="false" references="true" similarDeclarations="false" stamp="1512968677879" textual="false" version="1.0"/>
+</session>

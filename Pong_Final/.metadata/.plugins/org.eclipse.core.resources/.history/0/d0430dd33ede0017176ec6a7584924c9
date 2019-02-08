@@ -1,0 +1,36 @@
+package pong;
+
+public class ball {
+	private float[] dem = {0.02f, 0.02f};
+    private double[] coords = {0.0f, 0.0f};
+    private float[] inc = {0.02f, 0.01f};
+    public void updateBall (paddle player, ai ai){
+    		if (coords[1] + dem[1] > 1 || coords[1] - dem[1]< -1) inc[1] *= -1;
+    		if ((coords[0] + dem[0] > 1 - player.getDem()[0])  || coords[0] - dem[0]< -1 + player.getDem()[0]) {
+    			inc[0] *= -1;
+    		}
+    			
+    		
+    		System.out.println(player.getCoords()[0] + "player");
+    		System.out.println(coords[0] + "ball");
+ 
+    		System.out.println(inc[0] + "inc");
+    		this.velY(inc[1]);
+    		this.velX(inc[0]);
+    }
+    
+    public double[] getCoords(){
+        return coords;
+    }
+    
+    public float[] getDem() {
+    		return dem;
+    }
+    
+    public void velY(double newValue){
+        coords[1] = coords[1] + newValue;
+    }
+    public void velX(double newValue){
+        coords[0] = coords[0] + newValue;
+    }
+}
