@@ -19,7 +19,13 @@ A collection of all my older games/side projects... Varying amounts of effort an
 - Worked with graphs randomization and some pathfinding to make an adventure game.
 - Has two whole minutes of gameplay!!!
 
+**Skiing_Game** (Circa 2017):
+- Final game for my ICS3U class.
+- Manipulates 2D graphics to create the illusion of 3D Graphics.
+- Created a port for the OLPC.
+
 **Pong Final** (Circa 2017)
 - A final version of pong I submitted for my ICS3U Class.
 - Is super sketchy, I would recommend skipping this one.
+
 
