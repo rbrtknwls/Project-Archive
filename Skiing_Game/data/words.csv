@@ -1,0 +1,51 @@
+type,english,yugo,match
+word,numbers,brojevi,brojevi
+number,one,jedan,jedan
+number,two,dva,dva
+number,three,tri,tri
+number,four,četiri,cetiri
+number,five,pet,pet
+number,six,šest,sest
+number,seven,sedam,sedam
+number,eight,osam,osam
+number,nine,devet,devet
+number,ten,deset,deset
+number,eleven,jedanaest,jedanaest
+number,twelve,dvanaest,dvanaest
+number,thirteen,trinaest,trinaest
+number,fourteen,četrnaest,cetrnaest
+number,fifteen,petnaest,petnaest
+number,sixteen,šesnaest,sesnaest
+number,seventeen,sedamnaest,sedamnaest
+number,eighteen,osamnaest,osamnaest
+number,nineteen,devetnaest,devetnaest
+number,twenty,dvadeset,dvadeset
+number,thirty,trideset,trideset
+number,fourty,četrdeset,cetrdeset
+number,fifty,petdeset,petdeset
+number,sixty,šesdeset,sesdeset
+number,seventy,sedamdeset,sedamdeset
+number,eighty,osamdeset,osamdeset
+number,ninety,devedeset,devedeset
+number,hundred,sto,sto
+number,two hundred,dvjesto,dvjesto
+number,three hundred,tristo,tristo
+number,four hundred,cetrsto,cetrsto
+number,five hundred,petsto,petsto
+number,six hundred,šesto,sto
+number,seven hundred,sedamsto,sedamsto
+number,eight hundred,osamsto,osamsto
+number,nine hundred,divetsto,divetsto
+number,thousand,tisuću,tisucu
+number,two thousand,dvije tisuće,dvije tisuce
+number,three thousand,tri tisuće,tri tisuce
+number,four thousand,četiri tisuće,cetiri tisuce
+number,five thousand,pet tisuća,pet tisuca
+number,six thousand,šest tisuća,sest tisuca
+number,seven thousand,sedam tisuća,sedam tisuca
+number,eight thousand,osam tisuća,osam tisuca
+number,nine thousand,devet tisuća,devet tisuca
+number,ten thousand,devet tisuća,devet tisuca
+number,eleven thousand,jedanaest tisuca,jedanaest tisuca
+number,million,milijun,milijun
+number,billion,milijarda,milijarda

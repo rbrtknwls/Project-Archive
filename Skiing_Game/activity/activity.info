@@ -1,0 +1,6 @@
+[Activity]
+name = SkingActivity
+bundle_id = org.sugarlabs.TextMatchActivity
+exec = sugar-activity TextMatchActivity.TextMatchActivity
+icon = activity-generic
+activity_version = 1
